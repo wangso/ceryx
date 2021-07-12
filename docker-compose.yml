@@ -28,6 +28,8 @@ services:
       - daemon off;
       
   api:
+    ports:
+      - ${CERYX_EXTERNAL_PORT:-5555}:5555
     image: sourcelair/ceryx-api:latest
     depends_on:
       - redis
